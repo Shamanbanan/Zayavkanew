@@ -29,7 +29,7 @@
             <span>Статья</span>
             <span>ФИО</span>
             <span>Код</span>
-            <span>Статус</span>
+            <span>Комментарий</span>
             <span></span>
             <span></span>
           </li>
@@ -51,6 +51,10 @@
               <label for="category-4">Инвентарь</label></div>
               <div class="categiry-content"><input type="radio" id="category-5" name="category" value="Хозматериалы" required>
                 <label for="category-5">Хозматериалы</label></div>
+                <div class="categiry-content"><input type="radio" id="category-6" name="category" value="Инструмент" required>
+                  <label for="category-6">Инструмент</label></div>
+                  <div class="categiry-content"><input type="radio" id="category-7" name="category" value="Стройматериал" required>
+                    <label for="category-7">Стройматериал</label></div>
           <!-- Категории radio buttons -->
         </fieldset>
         <fieldset class="form-fieldset">
@@ -63,7 +67,7 @@
           <input type="text" id="equipment" list="equipment-list" placeholder="Оборудование" autocomplete="off" disabled required >
           <datalist id="equipment-list" autocomplete="off"></datalist>
           <!-- Статья -->
-          <input type="text" id="article" list="article-list" placeholder="Статья" required>
+          <input type="text" id="article" list="article-list" placeholder="Комментарий">
           <datalist id="article-list" autocomplete="on"></datalist>
           <!-- Баз.ед select -->
           <select id="type">
