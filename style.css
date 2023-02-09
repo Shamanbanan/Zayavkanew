@@ -262,7 +262,7 @@ grid-template-areas:
 #input-code{
   grid-area: code-field;
   background-color: transparent;
-  max-width: 70px;
+  max-width: 100px;
   text-align: center;
   font-size: 18px;
   color: #38393a;
