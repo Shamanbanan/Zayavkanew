@@ -246,10 +246,11 @@ function filterList(searchValue) {
       !searchValue ||
       items[i].textContent.toLowerCase().includes(searchValue.toLowerCase())
     ) {
-      items[i].style.display = "grid";
+      items[i].style.display = "table-row";
       items[i].classList.add("list-item");
     } else {
       items[i].style.display = "none";
+
     }
   }
 }
