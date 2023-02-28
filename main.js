@@ -291,7 +291,7 @@ enter.addEventListener('click', function() {
 
 const table = document.getElementById("table");
 const dateHeader = document.getElementById("date-header-sort");
-const ascending = false;
+var ascending = false;
 
 dateHeader.addEventListener("click", function() {
   const rows = Array.from(table.tBodies[0].rows);
