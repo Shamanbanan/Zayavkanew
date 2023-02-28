@@ -56,10 +56,10 @@ overflow: hidden;
   z-index: 2;
 }
 /*список*/
-ol {
-  padding-left: 0;
-  color: #38393a;
-  margin: 0;
+table{
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%
 }
 .left-side{
   height: 92vh;
@@ -78,26 +78,15 @@ ol {
   border-radius: 8px;
 
 }
-.header-item{
+thead{
   top: 0;
   position: sticky;
   background: #fff;
   box-shadow: 0px 5px 15px -5px rgba(50, 88, 130, 0.32);
-padding: 10px 10px;
 margin-bottom: 10px;
 font-weight: 600;
 font-size: 13px;
 color: #626363;
-display: grid;
-grid-template-columns: minmax(50px, 65px)
-minmax(100px, 1fr)  minmax(290px, 1fr)
-  minmax(80px, 1fr) minmax(50px, 1fr)
-   minmax(100px, 1fr) minmax(120px, 1fr)
-    minmax(70px, 70px) minmax(35px, 50px)
-     minmax(60px, 60px)
-      20px 20px;
-gap: 5px;
-align-items: center;
 text-align: start;
 border-radius: 10px;
 -webkit-border-radius: 10px;
@@ -105,38 +94,39 @@ border-radius: 10px;
 -ms-border-radius: 10px;
 -o-border-radius: 10px;
 }
-.list-item {
-  display: grid;
-  grid-template-columns: minmax(50px, 65px)
-   minmax(100px, 1fr)  minmax(290px, 1fr)
-     minmax(80px, 1fr) minmax(50px, 1fr)
-      minmax(100px, 1fr) minmax(120px, 1fr)
-       minmax(70px, 70px) minmax(35px, 50px)
-        minmax(60px, 60px)
-         20px 20px;
-         grid-template-rows: minmax(35px, 1fr);
-  gap: 5px;
-  border-bottom: 1px solid rgb(239, 237, 237);
-  align-items: center;
-  padding:0;
+tr {
   font-size: 12px;  
 }
+td{
+  padding:6px;
+  border-bottom: 1px solid rgb(239, 237, 237);
+}
+#date-header-sort:hover{
+  cursor: pointer;
+  color: rgb(76, 168, 119);
+}
+.sort-icons{
+  width: 10px;
+  height: 10px;
+transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
 #codeItem{
   max-width: 50px;
-  background: #e8f0f9;
+
   text-align: center;
   padding: 3px 2px;
-  color: #38393a;
+  color: #5a8bbc;
   font-weight: 600;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .list-item:hover {
   cursor: pointer;
 background: rgb(243, 249, 254);
+border: none;
 }
 #form{
   display: grid;

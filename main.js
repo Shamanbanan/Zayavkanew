@@ -123,25 +123,26 @@ db.ref().on("value", (snapshot) => {
 
 function addItemToList(data, key) {
   const list = document.getElementById("list");
-  const item = document.createElement("li");
+  const item = document.createElement("tr");
   item.classList.add('list-item');
 
 
   item.innerHTML = `
-    <span id="dateItem">${data.date}</span> 
-    <span id="categoryItem">${data.category}</span> 
-    <span id="nameyItem">${data.name}</span> 
-    <span id="variationItem">${data.variation}</span> 
-    <span id="typeItem">${data.type}</span> 
-    <span id="equipmentItem">${data.equipment}</span>
-    <span id="articleItem">${data.article}</span> 
-    <span class="user-id-option">${data.userId}</span> 
-    <span id="codeItem">${data.code}</span>
-    ${data.code ? `<span id="status">Занесен</span>` : `<span id="status">Обработка</span>`}
-    <svg class="disableButtons" id="readct" width="800px" height="800px" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
+    <td id="dateItem">${data.date}</td> 
+    <td id="categoryItem">${data.category}</td> 
+    <td id="nameyItem">${data.name}</td> 
+    <td id="variationItem">${data.variation}</td> 
+    <td id="typeItem">${data.type}</td> 
+    <td id="equipmentItem">${data.equipment}</td>
+    <td id="articleItem">${data.article}</td> 
+    <td class="user-id-option">${data.userId}</td> 
+    <td id="codeItem">${data.code}</td>
+    ${data.code ? `<td id="status">Занесен</td>` : `<td id="status">Обработка</td>`}
+    <td id="buttons"><svg class="disableButtons" id="readct" width="800px" height="800px" viewBox="0 0 24 24" fill="gray" xmlns="http://www.w3.org/2000/svg">
     <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM10.95 17.51C10.66 17.8 10.11 18.08 9.71 18.14L7.25 18.49C7.16 18.5 7.07 18.51 6.98 18.51C6.57 18.51 6.19 18.37 5.92 18.1C5.59 17.77 5.45 17.29 5.53 16.76L5.88 14.3C5.94 13.89 6.21 13.35 6.51 13.06L10.97 8.6C11.05 8.81 11.13 9.02 11.24 9.26C11.34 9.47 11.45 9.69 11.57 9.89C11.67 10.06 11.78 10.22 11.87 10.34C11.98 10.51 12.11 10.67 12.19 10.76C12.24 10.83 12.28 10.88 12.3 10.9C12.55 11.2 12.84 11.48 13.09 11.69C13.16 11.76 13.2 11.8 13.22 11.81C13.37 11.93 13.52 12.05 13.65 12.14C13.81 12.26 13.97 12.37 14.14 12.46C14.34 12.58 14.56 12.69 14.78 12.8C15.01 12.9 15.22 12.99 15.43 13.06L10.95 17.51ZM17.37 11.09L16.45 12.02C16.39 12.08 16.31 12.11 16.23 12.11C16.2 12.11 16.16 12.11 16.14 12.1C14.11 11.52 12.49 9.9 11.91 7.87C11.88 7.76 11.91 7.64 11.99 7.57L12.92 6.64C14.44 5.12 15.89 5.15 17.38 6.64C18.14 7.4 18.51 8.13 18.51 8.89C18.5 9.61 18.13 10.33 17.37 11.09Z"/>
-    </svg>
-  <svg class="disableButtons" id="btnRemove" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17,4V5H15V4H9V5H7V4A2,2,0,0,1,9,2h6A2,2,0,0,1,17,4Z"></path><path d="M20,6H4A1,1,0,0,0,4,8H5V20a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V8h1a1,1,0,0,0,0-2ZM11,17a1,1,0,0,1-2,0V11a1,1,0,0,1,2,0Zm4,0a1,1,0,0,1-2,0V11a1,1,0,0,1,2,0Z"></path></svg>`;
+    </svg></td>
+    
+    <td id="buttons"><svg class="disableButtons" id="btnRemove" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17,4V5H15V4H9V5H7V4A2,2,0,0,1,9,2h6A2,2,0,0,1,17,4Z"></path><path d="M20,6H4A1,1,0,0,0,4,8H5V20a2,2,0,0,0,2,2H17a2,2,0,0,0,2-2V8h1a1,1,0,0,0,0-2ZM11,17a1,1,0,0,1-2,0V11a1,1,0,0,1,2,0Zm4,0a1,1,0,0,1-2,0V11a1,1,0,0,1,2,0Z"></path></svg></td>`;
     // Блокировка кнопок btnRemove и readct, если checkbox = on и code = ""
 
     
@@ -169,7 +170,7 @@ function addItemToList(data, key) {
     modal.innerHTML = 
 
     `   <div class="modal-body">
-          <label for="dateModal">Дата</label><span id="dateModal">${data.date}</span>
+          <label for="dateModal">Дата</label><td id="dateModal">${data.date}</td>
           <label for="categoryModal">Категория</label><input id="categoryModal" value="${item.querySelector("#categoryItem").innerHTML}">
           <label for="nameModal">Наименование</label><input id="nameModal" value="${item.querySelector("#nameyItem").innerHTML}">
           <label for="variationModal">Вариант исполнения</label><input id="variationModal" value="${item.querySelector("#variationItem").innerHTML}">
@@ -238,7 +239,7 @@ modal.querySelector("#btnSave").addEventListener("click", () => {
 //фильтр по списку
 function filterList(searchValue) {
   const list = document.getElementById("list");
-  const items = list.getElementsByTagName("li");
+  const items = list.getElementsByTagName("tr");
 
   for (let i = 0; i < items.length; i++) {
     if (
@@ -262,7 +263,7 @@ userSearch.addEventListener("input", function () {
 var usernameModal = document.createElement('div');
 
 usernameModal.classList.add('usernameModal');
-usernameModal.innerHTML = '<input type="text" placeholder="Введите фамилию" autocomplete="on" id="surname"><button id="enter">Войти</button>';
+usernameModal.innerHTML = '<input type="text" placeholder="Введите фамилию" list="user-datalist" autocomplete="on" id="surname"><datalist id="user-datalist"><option>Власенко</option><option>Панов</option><option>Власов</option><option>Шиманский</option></datalist><button id="enter">Войти</button>';
 document.body.appendChild(usernameModal);
 
 var surname = document.getElementById('surname');
@@ -286,3 +287,27 @@ enter.addEventListener('click', function() {
     
   };
 });
+
+
+var table = document.getElementById("table");
+var dateHeader = document.getElementById("date-header-sort");
+var ascending = false;
+
+dateHeader.addEventListener("click", function() {
+  var rows = Array.from(table.tBodies[0].rows);
+ 
+  rows.sort(function(a, b) {
+    var aValue = new Date(a.cells[0].textContent.split('.').reverse().join('.')).getTime();
+    var bValue = new Date(b.cells[0].textContent.split('.').reverse().join('.')).getTime();
+    if(ascending){
+    
+      return aValue - bValue;
+    }else{
+      return bValue - aValue;
+    }
+   // return ascending ? aValue - bValue : bValue - aValue;
+  });
+  rows.forEach(function(row) {
+    table.tBodies[0].appendChild(row);
+  });
+  ascending = !ascending;});
