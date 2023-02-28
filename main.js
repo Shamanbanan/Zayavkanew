@@ -215,6 +215,7 @@ modal.querySelector("#btnSave").addEventListener("click", () => {
       item.querySelector("#variationItem").innerHTML = updatedData.variation;
       item.querySelector("#typeItem").innerHTML = updatedData.type;
       item.querySelector("#equipmentItem").innerHTML = updatedData.equipment;
+      item.querySelector("#commentModal").innerHTML = updatedData.comment;
       item.querySelector("#articleItem").innerHTML = updatedData.article;
       item.querySelector(".user-id-option").innerHTML = updatedData.userId;
       item.querySelector("#codeItem").innerHTML = updatedData.code;
