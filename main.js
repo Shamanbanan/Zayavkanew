@@ -134,6 +134,7 @@ function addItemToList(data, key) {
     <td id="variationItem">${data.variation}</td> 
     <td id="typeItem">${data.type}</td> 
     <td id="equipmentItem">${data.equipment}</td>
+    ${data.comment ? `<td id="commentItem">${data.comment}</td>` : `<td id="commentItem"></td>`}
     <td id="articleItem">${data.article}</td> 
     <td class="user-id-option">${data.userId}</td> 
     <td id="codeItem">${data.code}</td>
@@ -175,6 +176,7 @@ function addItemToList(data, key) {
           <label for="variationModal">Вариант исполнения</label><input id="variationModal" value="${item.querySelector("#variationItem").innerHTML}">
           <label for="typeModal">Баз.ед.</label><input id="typeModal" value="${item.querySelector("#typeItem").innerHTML}">
           <label for="dequipmentModal">Оборудование</label><input id="equipmentModal" value="${item.querySelector("#equipmentItem").innerHTML}">
+          <label for="commentModal">Комментарий</label><input id="commenttModal" value="${item.querySelector("#commentItem").innerHTML}">
           <label for="articleModal">Статья</label><input id="articleModal" value="${item.querySelector("#articleItem").innerHTML}">
           <label for="userIdModal">ФИО</label><input id="userIdModal" value="${data.userId}">
           <label for="codeModal">Код</label><input id="codeModal" type="number" value="${item.querySelector("#codeItem").innerHTML}">
@@ -198,6 +200,7 @@ modal.querySelector("#btnSave").addEventListener("click", () => {
       variation: modal.querySelector("#variationModal").value,
       type: modal.querySelector("#typeModal").value,
       equipment: modal.querySelector("#equipmentModal").value,
+      comment: modal.querySelector("#commentModal").value,
       article: modal.querySelector("#articleModal").value,
       userId: modal.querySelector("#userIdModal").value,
       code: modal.querySelector("#codeModal").value,
